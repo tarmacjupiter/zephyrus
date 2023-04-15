@@ -5,17 +5,19 @@ import image from"../assets/github-mark/github-mark-white.png"
 function Footer(){
   const year = new Date().getFullYear();
   return (
-    <footer>
-      <h2 className='roboto-font'>
-        Project Zephyrus | WildHacks {year}
-      </h2>
-      <a rel="noreferrer" target="_blank" href="https://github.com/tarmacjupiter/zephyrus">
-        <h4>
-          <img src={image} alt="GitHub Logo" className='footer-image'></img>
-          {/* <em className = 'footer-text'>GitHub</em> */}
-        </h4>
-      </a>
-    </footer>
+    <div style={{paddingBottom: "60px"}}>
+      <footer>
+        <h2 className='roboto-font'>
+          Project Zephyrus | WildHacks {year}
+        </h2>
+        <a rel="noreferrer" target="_blank" href="https://github.com/tarmacjupiter/zephyrus">
+          <h4>
+            <img src={image} alt="GitHub Logo" className='footer-image'></img>
+            {/* <em className = 'footer-text'>GitHub</em> */}
+          </h4>
+        </a>
+      </footer>
+    </div>
   );
 }
 

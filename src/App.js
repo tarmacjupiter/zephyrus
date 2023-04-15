@@ -123,50 +123,52 @@ function App() {
     <div className="App">
       <Header />
 
-      <Instructions />
+      <div style={{ minHeight: "calc(100px - 34px)" }}>
+        <Instructions />
 
-      {/* API RESPONSE */}
-      <h4>{loading ? "Generating Response..." : 
-            apiResponse.map((item, index, key) => {
-              if(index === 0) {
-                return <>{item}</>
-              } 
-              return <><br />- {item}</>
-            })}</h4>
+        {/* API RESPONSE */}
+        <h4>{loading ? "Generating Response..." : 
+              apiResponse.map((item, index, key) => {
+                if(index === 0) {
+                  return <>{item}</>
+                } 
+                return <><br />- {item}</>
+              })}</h4>
 
-      {/* <AwesomeButton type='primary' 
-      className='aws-btn' onPress={handleSubmit}>Click Me!</AwesomeButton> */}
+        {/* <AwesomeButton type='primary' 
+        className='aws-btn' onPress={handleSubmit}>Click Me!</AwesomeButton> */}
 
-      <button className='btn' onClick={handleSubmit}>Click me!</button>
+        <button className='btn' onClick={handleSubmit}>Click me!</button>
 
-      <div className='form-container'>
-          <Dropdown 
-            type="Gender"
-            options={[
-              {value: "Male", label: "Male"},
-              {value: "Female", label: "Female"},
-              {value: "Neutral", label: "Neutral"}
-            ]}
-          onSubmit={handleInputSubmit}
-          />
-          <Dropdown 
-            type="Occasion"
-            options={[
-              {value: "Casual", label: "Casual"},
-              {value: "Formal", label: "Formal"},
-              {value: "Business", label: "Business"}
-            ]}
-          onSubmit={handleInputSubmit}
-          />
-          <Dropdown 
-            type="Style"
-            options={[
-              {value: "Minimalist", label: "Minimalist"},
-              {value: "Athletic", label: "Athletic"},
-              {value: "Street Ware", label: "Street Ware"}
-            ]}
-          onSubmit={handleInputSubmit}
-          />
+        <div className='form-container'>
+            <Dropdown 
+              type="Gender"
+              options={[
+                {value: "Male", label: "Male"},
+                {value: "Female", label: "Female"},
+                {value: "Neutral", label: "Neutral"}
+              ]}
+            onSubmit={handleInputSubmit}
+            />
+            <Dropdown 
+              type="Occasion"
+              options={[
+                {value: "Casual", label: "Casual"},
+                {value: "Formal", label: "Formal"},
+                {value: "Business", label: "Business"}
+              ]}
+            onSubmit={handleInputSubmit}
+            />
+            <Dropdown 
+              type="Style"
+              options={[
+                {value: "Minimalist", label: "Minimalist"},
+                {value: "Athletic", label: "Athletic"},
+                {value: "Street Ware", label: "Street Ware"}
+              ]}
+            onSubmit={handleInputSubmit}
+            />
+        </div>
       </div>
 
         <Footer />
