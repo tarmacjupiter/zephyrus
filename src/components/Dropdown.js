@@ -1,31 +1,83 @@
 import React, { useState } from "react";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
 
 function DropdownButton() {
-    const [isOpen, setIsOpen] = useState(false);
-    const options = ["Option 1", "Option 2", "Option 3"];
+    const [selectedOption, setSelectedOption] = useState(null);
+    const options = [
+        { value: "Male", label: "Male" },
+        { value: "Female", label: "Female" },
+        { value: "Neutral", label: "Neutral" },
+    ];
 
-    function toggleDropdown() {
-        setIsOpen(!isOpen);
-    }
-
-    function handleOptionClick(option) {
-        console.log(option);
-        setIsOpen(false);
+    function handleOptionSelect(option) {
+        setSelectedOption(option);
     }
 
     return (
         <div>
-            <button onClick={toggleDropdown}>Select an option</button>
-            {isOpen && (
-                <ul>
-                    {options.map((option) => (
-                        <li key={option} onClick={() => handleOptionClick(option)}>
-                            {option}
-                        </li>
-                    ))}
-                </ul>
+            <Dropdown
+                options={options}
+                onChange={handleOptionSelect}
+                value={selectedOption}
+                placeholder="Gender"
+            />
+            {selectedOption && (
+                <div>
+                    {selectedOption.value === "masculine" ||
+                    selectedOption.value === "feminine" ||
+                    selectedOption.value === "neutral" ? (
+                        <div>
+                            <div>Style</div>
+                            {selectedOption.label}
+                        </div>
+                    ) : (
+                        selectedOption.label
+                    )}
+                </div>
+            )}
+            <Dropdown
+                options={options}
+                onChange={handleOptionSelect}
+                value={selectedOption}
+                placeholder="Occasion"
+            />
+            {selectedOption && (
+                <div>
+                    {selectedOption.value === "Casual" ||
+                    selectedOption.value === "Formal" ||
+                    selectedOption.value === "Business" ? (
+                        <div>
+                            <div>Style</div>
+                            {selectedOption.label}
+                        </div>
+                    ) : (
+                        selectedOption.label
+                    )}
+                </div>
+            )}
+            <Dropdown
+                options={options}
+                onChange={handleOptionSelect}
+                value={selectedOption}
+                placeholder="Style"
+            />
+            {selectedOption && (
+                <div>
+                    {selectedOption.value === "Minimalist" ||
+                    selectedOption.value === "Athletic" ||
+                    selectedOption.value === "Street ware" ? (
+                        <div>
+                            <div>Style</div>
+                            {selectedOption.label}
+                        </div>
+                    ) : (
+                        selectedOption.label
+                    )}
+                </div>
             )}
         </div>
+
     );
 }
 
