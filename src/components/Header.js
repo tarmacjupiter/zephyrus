@@ -1,9 +1,10 @@
 import React from 'react'
+import "./Header.css"
 
 function Header(){
     return (
-        <div>
-            <h1>Header File!</h1>
+        <div className='Title'>
+            <h1 className='roboto-font'>Zephyrus</h1>
         </div>
     )
 }

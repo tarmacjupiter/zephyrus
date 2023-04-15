@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+.aws-btn {
+  --button-default-height: 58px;
+  --button-default-font-size: 14px;
+  --button-default-border-radius: 9px;
+  --button-horizontal-padding: 34px;
+  --button-raise-level: 8px;
+  --button-hover-pressure: 1;
+  --transform-speed: 0.15s;
+  --button-primary-color: #1b2655;
+  --button-primary-color-dark: #335e82;
+  --button-primary-color-light: #ffffff;
+  --button-primary-color-hover: #5d84d4;
+  --button-primary-color-active: #3c5e7b;
+  --button-primary-border: none;
+}
