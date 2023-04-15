@@ -3,7 +3,7 @@ import React from 'react'
 function Instructions(){
     return (
         <div>
-            <p>Instructions:\n
+            <p>Instructions:
             </p>
         </div>
     )

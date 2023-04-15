@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Dropdown from "./components/Dropdown";
+import Instructions from './components/Instructions';
 import {AwesomeButton} from 'react-awesome-button';
 import "react-awesome-button/dist/styles.css"
 import './App.css';
@@ -106,6 +107,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Instructions />
       <h4>{loading ? "Generating Response..." : 
             apiResponse.map((item, index, key) => {
               if(index === 0) {
