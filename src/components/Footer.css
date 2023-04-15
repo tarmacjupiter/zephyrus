@@ -1,0 +1,30 @@
+footer {
+    position: fixed;
+    background-color: #112B4A;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px;
+    text-align: center;
+  }
+
+.roboto-font {
+    font-family: 'Roboto', sans-serif;
+    color: #fff
+    
+}
+
+.footer-text {
+    font-family: 'Roboto', sans-serif;
+    color:gray;
+    text-align: center;
+    padding: 10px;
+    /* align */
+    vertical-align: 50%;
+}
+
+
+.footer-image {
+    width: 2.5%;
+    height: 2.5%;
+}
