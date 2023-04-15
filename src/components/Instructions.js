@@ -3,7 +3,8 @@ import React from 'react'
 function Instructions(){
     return (
         <div>
-            <p>Instktdiytfiructions here!</p>
+            <p>Instructions:\n
+            </p>
         </div>
     )
 }
