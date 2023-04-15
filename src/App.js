@@ -16,7 +16,10 @@ function App() {
       <h1>Hello!</h1>
       <AwesomeButton type='primary' 
       className='aws-btn' onPress={() => console.log("clicked!")}>Click Me!</AwesomeButton>
-      <Footer />
+      <div>
+          <Dropdown />
+      </div>
+        <Footer />
     </div>
   );
 }
