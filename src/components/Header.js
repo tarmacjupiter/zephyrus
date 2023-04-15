@@ -3,7 +3,7 @@ import "./Header.css"
 
 function Header(){
     return (
-        <div className='Footer'>
+        <div className='Title'>
             <h1 className='roboto-font'>Zephyrus</h1>
         </div>
     )
