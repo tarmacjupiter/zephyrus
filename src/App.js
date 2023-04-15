@@ -122,7 +122,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      
+
       <Instructions />
 
       {/* API RESPONSE */}
@@ -136,6 +136,8 @@ function App() {
 
       <AwesomeButton type='primary' 
       className='aws-btn' onPress={handleSubmit}>Click Me!</AwesomeButton>
+
+      <button onClick={handleSubmit}>Click me!</button>
 
       <div className='form-container'>
           <Dropdown 
