@@ -134,10 +134,10 @@ function App() {
               return <><br />- {item}</>
             })}</h4>
 
-      <AwesomeButton type='primary' 
-      className='aws-btn' onPress={handleSubmit}>Click Me!</AwesomeButton>
+      {/* <AwesomeButton type='primary' 
+      className='aws-btn' onPress={handleSubmit}>Click Me!</AwesomeButton> */}
 
-      <button onClick={handleSubmit}>Click me!</button>
+      <button className='btn' onClick={handleSubmit}>Click me!</button>
 
       <div className='form-container'>
           <Dropdown 
