@@ -6,6 +6,8 @@ footer {
     right: 0;
     padding: 8px;
     text-align: center;
+
+    border-top: 12px solid #326199
   }
 
 .roboto-font {
