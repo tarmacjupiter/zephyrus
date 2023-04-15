@@ -57,7 +57,9 @@ function App() {
 
   // OPENAI API LOGIC
   const handleSubmit = async (e) => {
-    console.log(selectedInputs)
+    console.log(selectedInputs.Gender)
+    console.log(selectedInputs.Occasion)
+    console.log(selectedInputs.Style)
 
     let arr = []
     e.preventDefault();
@@ -70,21 +72,21 @@ function App() {
       
       let text = 
       `
-      Look at this template for clothes to wear depending on the weather
+      Only include 3 bullet points in your response.
 
-      - [top clothing]
-      - [bottom clothing]
-      - [feet clothing]
+      Tell me what to wear for ${temperature["hourly"]["temperature_2m"][0]} Celsius degree weather
+      ${selectedInputs.Gender === undefined ? "" : "for a " + selectedInputs.Gender + " style of clothing"}
+      ${selectedInputs.Occasion === undefined ? "" : "along with a " + selectedInputs.Occasion + " style of clothing"}
+      ${selectedInputs.Style === undefined ? "" : "also include a " + selectedInputs.Style + " style of clothing"}
 
-      I will give you a temperature, and I want you to tell me what I 
-      should wear depending on the weather. Your response should include 
-      colors that would go well together along with the specific type of clothing. 
-      Include sample colors in the bullet points you create. 
-      Keep the answers brief but detailed.
+      With all the information above, generate 3 SHORT bullet points telling me what to wear
+      for upper body, lower body, and shoes.
+      
+      That looks like this:
 
-      Only include the bullet points in your response.
-
-      Tell me what to wear for ${temperature["hourly"]["temperature_2m"][0]} Celsius degree weather.
+      - [upper body]
+      - [lower body]
+      - [shoes]
       ` 
 
       const result = await openai.createCompletion({
@@ -120,17 +122,21 @@ function App() {
   return (
     <div className="App">
       <Header />
+      
       <Instructions />
+
+      {/* API RESPONSE */}
       <h4>{loading ? "Generating Response..." : 
             apiResponse.map((item, index, key) => {
               if(index === 0) {
                 return <>{item}</>
-              }
+              } 
               return <><br />- {item}</>
             })}</h4>
 
       <AwesomeButton type='primary' 
       className='aws-btn' onPress={handleSubmit}>Click Me!</AwesomeButton>
+
       <div className='form-container'>
           <Dropdown 
             type="Gender"
@@ -160,7 +166,9 @@ function App() {
           onSubmit={handleInputSubmit}
           />
       </div>
+
         <Footer />
+
     </div>
   );
 }
