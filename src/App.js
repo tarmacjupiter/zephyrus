@@ -120,7 +120,7 @@ function App() {
       <div>
           <Dropdown />
       </div>
-        <Footer />
+        {/*<Footer />*/}
     </div>
   );
 }
