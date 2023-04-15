@@ -50,4 +50,12 @@
   --button-primary-color-hover: #5d84d4;
   --button-primary-color-active: #3c5e7b;
   --button-primary-border: none;
+  margin-bottom: 2%;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2%;
 }

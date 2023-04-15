@@ -57,6 +57,8 @@ function App() {
 
   // OPENAI API LOGIC
   const handleSubmit = async (e) => {
+    console.log(selectedInputs)
+
     let arr = []
     e.preventDefault();
     setLoading(true);
@@ -104,6 +106,17 @@ function App() {
     setLoading(false);
   };
 
+  // form state
+  const [selectedInputs, setSelectedInputs] = useState({})
+
+  function handleInputSubmit(inputType, inputValue)
+  {
+    setSelectedInputs((prevInputs) => ({
+      ...prevInputs,
+      [inputType]: inputValue
+    }))
+  }
+
   return (
     <div className="App">
       <Header />
@@ -117,8 +130,34 @@ function App() {
             })}</h4>
       <AwesomeButton type='primary' 
       className='aws-btn' onPress={handleSubmit}>Click Me!</AwesomeButton>
-      <div>
-          <Dropdown />
+      <div className='form-container'>
+          <Dropdown 
+            type="Gender"
+            options={[
+              {value: "Male", label: "Male"},
+              {value: "Female", label: "Female"},
+              {value: "Neutral", label: "Neutral"}
+            ]}
+          onSubmit={handleInputSubmit}
+          />
+          <Dropdown 
+            type="Occasion"
+            options={[
+              {value: "Casual", label: "Casual"},
+              {value: "Formal", label: "Formal"},
+              {value: "Business", label: "Business"}
+            ]}
+          onSubmit={handleInputSubmit}
+          />
+          <Dropdown 
+            type="Style"
+            options={[
+              {value: "Minimalist", label: "Minimalist"},
+              {value: "Athletic", label: "Athletic"},
+              {value: "Street Ware", label: "Street Ware"}
+            ]}
+          onSubmit={handleInputSubmit}
+          />
       </div>
         <Footer />
     </div>
