@@ -106,9 +106,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Hello!</h1>
       <h4>{loading ? "Generating Response..." : 
-            apiResponse.map((item, index) => {
+            apiResponse.map((item, index, key) => {
               if(index === 0) {
                 return <>{item}</>
               }
