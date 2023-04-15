@@ -1,9 +1,12 @@
 .instructions-box {
-    background-color: #0071BA;
+    background-color: #b64710;
     color: #777777;
     padding: 10px;
-  }
-  
-  .instructions-text {
+    border: 2px solid #12c36a;
+    width: 100%;
+}
+
+
+.instructions-text {
     margin: 0;
-  }
+}
