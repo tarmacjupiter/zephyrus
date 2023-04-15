@@ -28,3 +28,7 @@ footer {
     width: 2.5%;
     height: 2.5%;
 }
+.footer-image:hover {
+    filter: brightness(150%);
+    transition: filter 0.5s ease-in-out;
+}
