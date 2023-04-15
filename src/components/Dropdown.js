@@ -39,7 +39,6 @@ function DropdownButton() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
                 <Dropdown
                     options={genderOptions}
                     onChange={(option) => handleOptionSelect(option, "gender")}
@@ -102,9 +101,7 @@ function DropdownButton() {
                         )}
                     </div>
                 )}
-
-                <button type="submit">Submit</button>
-            </form>
+                <button onClick={handleSubmit}>Submit</button>
         </div>
     );
 }
