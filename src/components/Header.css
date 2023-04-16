@@ -2,13 +2,13 @@
     box-sizing: border-box;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: baseline;
     padding: 1em;
     margin-bottom: 2em;
     background-color: #112B4A;
     color: #511fdc;
-
+    text-align: center;
     border-bottom: 12px solid #326199
 }
 

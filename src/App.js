@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Dropdown from "./components/Dropdown";
 import Instructions from './components/Instructions';
-// import {AwesomeButton} from 'react-awesome-button';
 import "react-awesome-button/dist/styles.css"
 import './App.css';
 
@@ -98,24 +97,6 @@ function App() {
       });
       setApiResponse(result.data.choices[0].text);
       arr = result.data.choices[0].text.split("- ")
-
-      // text = 
-      //   `
-      //   ${selectedInputs.Gender === undefined ? "Neutral" : selectedInputs.Gender}
-      //    person with a 
-      //   ${selectedInputs.Occasion == undefined ? "neutral" : selectedInputs.Occasion}
-      //    attire, along with a 
-      //   ${selectedInputs.Style == undefined ? "neutral" : selectedInputs.Style}
-      //    style
-      // `
-      
-      // const imageResult = await openai.createImage({
-      //   prompt: text,
-      //   n: 1,
-      //   size: "1024x1024", 
-      // })
-      // setImageURL(imageResult.data.data[0].url)
-
     }
     catch (e) {
       console.log(e)
@@ -145,7 +126,7 @@ function App() {
         ${selectedInputs.Occasion === undefined ? "neutral" : selectedInputs.Occasion}
          attire, along with a 
         ${selectedInputs.Style === undefined ? "neutral" : selectedInputs.Style}
-         style
+         style, for ${temperature["hourly"]["temperature_2m"][0]} Celsius degree weather.
       `
       const imageResult = await openai.createImage({
         prompt: text,
@@ -177,6 +158,8 @@ function App() {
 
   return (
     <div className="App">
+
+      {/* Header */}
       <Header />
 
       <div style={{ minHeight: "calc(100px - 34px)" }}>
@@ -195,9 +178,7 @@ function App() {
                 return <><br />- {item}</>
               })}</h4>
 
-        {/* <AwesomeButton type='primary' 
-        className='aws-btn' onPress={handleSubmit}>Click Me!</AwesomeButton> */}
-
+        {/* Dropdown Menu */}
         <div className='form-container'>
             <Dropdown 
               type="Gender"
@@ -222,16 +203,19 @@ function App() {
               options={[
                 {value: "Minimalist", label: "Minimalist"},
                 {value: "Athletic", label: "Athletic"},
-                {value: "Street Wear", label: "Street Wear"}
+                {value: "Street Wear", label: "Street Wear"},
+                {value: "Professional", labe: "Professional"}
               ]}
             onSubmit={handleInputSubmit}
             />
         </div>
+        {/* Buttons */}
         <button className='btn' onClick={handleSubmit}>Get Info!</button>
         <br />
         <button className='img-btn' onClick={retrieveImageUrl}>Get Image!</button>
 
       </div>
+        {/* Footer */}
         <Footer />
     </div>
   );
