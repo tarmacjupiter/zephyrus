@@ -1,71 +1,22 @@
-# Getting Started with Create React App
+# Zephyrus App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Zephyrus is an app that helps you decide what to wear for the day. It takes a prompt from the user through a dropdown menu and then uses a geolocation API to communicate with the Whisper Chat GPT API to generate recommendations. Additionally, the app has an option to show a picture.
 
-## Available Scripts
+The app is named after the Greek god Zephyrus, who was the god of the west wind. We chose this name because 
+the west wind controlled the weather, and this app is designed to help people dress appropriately for the weather.
 
-In the project directory, you can run:
+## How to Use
 
-### `npm start`
+1. Select your prompt from the dropdown menu.
+2. Click on "Generate Recommendation" to receive your recommendation.
+3. If you want to see a picture related to the recommendation, click on the "Show Picture" button.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## File Details
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- *Dropdown.js* - This component creates a dropdown menu that allows the user to select their prompt.
+- *Footer.js* - This component creates the footer of the app and displays relevant information.
+- *Header.js* - This component creates the header of the app and displays the app's name.
+- *Instructions.js* - This component displays instructions on how to use the app.
+- *App.js* - This is the main component of the app. It communicates with the geolocation API and the Whisper Chat GPT API to generate recommendations based on the user's prompt. It also displays the recommendations and the option to show a picture.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# zephyrus
+Thank you for using Zephyrus!
