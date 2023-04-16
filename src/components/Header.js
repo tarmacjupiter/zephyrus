@@ -1,10 +1,11 @@
 import React from 'react'
+import logo from "../assets/zephyrus-logo.png"
 import "./Header.css"
 
 function Header(){
     return (
         <div className='Title'>
-            <h1 className='roboto-font'>Zephyrus</h1>
+            <img className="logo-img" src={logo} alt="Logo"/>
         </div>
     )
 }

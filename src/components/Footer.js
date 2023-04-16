@@ -11,6 +11,7 @@ function Footer(){
         WildHacks {year}
         </h2>
         <p className='roboto-font'>Anthony B | Antanas R | Upanshu P | Max Z</p>
+        <p className='roboto-font'>Logo Inspiration - Dante B</p>
         <a rel="noreferrer" target="_blank" href="https://github.com/tarmacjupiter/zephyrus">
           <h4>
             <img src={image} alt="GitHub Logo" className='footer-image'></img>
