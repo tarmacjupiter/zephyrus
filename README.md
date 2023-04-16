@@ -27,7 +27,6 @@ the west wind controlled the weather, and this app is designed to help people dr
 
 ![img_1](https://user-images.githubusercontent.com/92644639/232327965-0a093560-7945-4ebd-a92f-74debacba22a.png)
 
-
-<img width="814" alt="img_2" src="https://user-images.githubusercontent.com/92644639/232328114-5df1b426-959f-4daa-b844-0dca4f228df2.png">
+![img_2](https://user-images.githubusercontent.com/92644639/232328150-b1e9d539-71a3-428e-b0e5-d91d801550a2.png)
 
 Thank you for using Zephyrus!
