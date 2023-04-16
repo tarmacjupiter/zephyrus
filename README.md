@@ -2,6 +2,8 @@
 
 [https://project-zephyrus.netlify.app](https://project-zephyrus.netlify.app)
 
+[https://project-zephyrus.tech](https://project-zephyrus.tech)
+
 Zephyrus is an app that helps you decide what to wear for the day. It takes a prompt from the user through a dropdown menu and then uses a geolocation API to communicate with the Whisper Chat GPT API to generate recommendations. Additionally, the app has an option to show a picture.
 
 The app is named after the Greek god Zephyrus, who was the god of the west wind. We chose this name because 
