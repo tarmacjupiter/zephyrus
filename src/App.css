@@ -69,10 +69,28 @@
   background-color: #171b2a;
 }
 
+.img-btn {
+  background-color: #091964;
+  color: white;
+  font-size: 15px;
+  padding: 5px 55px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+
 .form-container {
   display: flex;
   justify-content: center;
   flex-direction: row;
   gap: 2%;
-  margin-bottom: 6%;
+  margin-bottom: 1%;
+}
+
+.img-style {
+  box-shadow: 1px 2px 9px #F4AAB9;
+  padding: 1em;
+  width: 25%;
+  height: 25%;
 }

@@ -2,9 +2,9 @@ function Instructions(){
     return (
         <div>
             <p style={{ textAlign: 'center', whiteSpace: 'pre-line' }}>
-                Instructions:
-                Click button for access to clothing preferences.
-                Submit for clothing Recommendations
+                <strong>Instructions: </strong>
+                Select Clothing Preferences, then click the "Get Info!" button
+                to generate a clothing recommendation.  
             </p>
         </div>
     )

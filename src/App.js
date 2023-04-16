@@ -14,6 +14,7 @@ function App() {
   const [location, setLocation] = useState(null);       // state for getting the users location
   const [temperature, setTemperature] = useState(null); // state for getting the users temperature
   const [apiResponse, setApiResponse] = useState([]);   // state for the OPENAI response
+  const [imageURL, setImageURL] = useState("")          // Image state
 
   // Get the users geolocation
   useEffect(() => {
@@ -38,23 +39,23 @@ function App() {
       setLoading(false);
     }
   }, []);
-
+  
   // Get the users temperature using the geolocation logic
   useEffect(() => {
     if(location) {
       fetch(`https://api.open-meteo.com/v1/forecast?latitude=${Math.round(location.latitude * 100) / 100}&longitude=${Math.round(location.longitude * 100) / 100}&hourly=temperature_2m,precipitation`)
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          setTemperature(data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setTemperature(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     }
   }, [location]);
-
-
+  
+  
   // OPENAI API LOGIC
   const handleSubmit = async (e) => {
     console.log(selectedInputs.Gender)
@@ -97,6 +98,24 @@ function App() {
       });
       setApiResponse(result.data.choices[0].text);
       arr = result.data.choices[0].text.split("- ")
+
+      // text = 
+      //   `
+      //   ${selectedInputs.Gender === undefined ? "Neutral" : selectedInputs.Gender}
+      //    person with a 
+      //   ${selectedInputs.Occasion == undefined ? "neutral" : selectedInputs.Occasion}
+      //    attire, along with a 
+      //   ${selectedInputs.Style == undefined ? "neutral" : selectedInputs.Style}
+      //    style
+      // `
+      
+      // const imageResult = await openai.createImage({
+      //   prompt: text,
+      //   n: 1,
+      //   size: "1024x1024", 
+      // })
+      // setImageURL(imageResult.data.data[0].url)
+
     }
     catch (e) {
       console.log(e)
@@ -107,6 +126,42 @@ function App() {
 
     setLoading(false);
   };
+
+  // retrieving image url
+  const retrieveImageUrl = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    
+    try {
+      const configuration = new Configuration({
+          apiKey: process.env.REACT_APP_OPENAI_API_KEY
+      });
+      const openai = new OpenAIApi(configuration);
+      
+      let text = 
+      `
+        ${selectedInputs.Gender === undefined ? "Neutral" : selectedInputs.Gender}
+         person with a 
+        ${selectedInputs.Occasion == undefined ? "neutral" : selectedInputs.Occasion}
+         attire, along with a 
+        ${selectedInputs.Style == undefined ? "neutral" : selectedInputs.Style}
+         style
+      `
+      const imageResult = await openai.createImage({
+        prompt: text,
+        n: 1,
+        size: "1024x1024", 
+      })
+      setImageURL(imageResult.data.data[0].url)
+
+    }
+    catch (e) {
+      console.log(e)
+      setApiResponse("Something went wrong!");
+    }
+
+    setLoading(false); 
+  }
 
   // form state
   const [selectedInputs, setSelectedInputs] = useState({})
@@ -119,14 +174,19 @@ function App() {
     }))
   }
 
+
   return (
     <div className="App">
       <Header />
 
       <div style={{ minHeight: "calc(100px - 34px)" }}>
         <Instructions />
-
         {/* API RESPONSE */}
+
+        <div>
+          {imageURL === "" ? "" : <img src={imageURL} alt="" className='img-style'/>}
+        </div>
+
         <h4>{loading ? "Generating Response..." : 
               apiResponse.map((item, index, key) => {
                 if(index === 0) {
@@ -137,8 +197,6 @@ function App() {
 
         {/* <AwesomeButton type='primary' 
         className='aws-btn' onPress={handleSubmit}>Click Me!</AwesomeButton> */}
-
-        <button className='btn' onClick={handleSubmit}>Click me!</button>
 
         <div className='form-container'>
             <Dropdown 
@@ -164,15 +222,17 @@ function App() {
               options={[
                 {value: "Minimalist", label: "Minimalist"},
                 {value: "Athletic", label: "Athletic"},
-                {value: "Street Ware", label: "Street Ware"}
+                {value: "Street Wear", label: "Street Wear"}
               ]}
             onSubmit={handleInputSubmit}
             />
         </div>
+        <button className='btn' onClick={handleSubmit}>Get Info!</button>
+        <br />
+        <button className='img-btn' onClick={retrieveImageUrl}>Get Image!</button>
+
       </div>
-
         <Footer />
-
     </div>
   );
 }
