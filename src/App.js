@@ -142,9 +142,9 @@ function App() {
       `
         ${selectedInputs.Gender === undefined ? "Neutral" : selectedInputs.Gender}
          person with a 
-        ${selectedInputs.Occasion == undefined ? "neutral" : selectedInputs.Occasion}
+        ${selectedInputs.Occasion === undefined ? "neutral" : selectedInputs.Occasion}
          attire, along with a 
-        ${selectedInputs.Style == undefined ? "neutral" : selectedInputs.Style}
+        ${selectedInputs.Style === undefined ? "neutral" : selectedInputs.Style}
          style
       `
       const imageResult = await openai.createImage({
