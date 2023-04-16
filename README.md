@@ -23,4 +23,10 @@ the west wind controlled the weather, and this app is designed to help people dr
 - *Instructions.js* - This component displays instructions on how to use the app.
 - *App.js* - This is the main component of the app. It communicates with the geolocation API and the Whisper Chat GPT API to generate recommendations based on the user's prompt. It also displays the recommendations and the option to show a picture.
 
+## Images
+
+![img_1](https://user-images.githubusercontent.com/92644639/232327965-0a093560-7945-4ebd-a92f-74debacba22a.png)
+
+![img_2](https://user-images.githubusercontent.com/92644639/232327974-4df071ff-6487-4578-bac3-1137be4f1b34.png)
+
 Thank you for using Zephyrus!
