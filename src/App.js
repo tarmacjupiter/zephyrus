@@ -78,6 +78,9 @@ function App() {
       ${selectedInputs.Gender === undefined ? "" : "for a " + selectedInputs.Gender + " style of clothing"}
       ${selectedInputs.Occasion === undefined ? "" : "along with a " + selectedInputs.Occasion + " style of clothing"}
       ${selectedInputs.Style === undefined ? "" : "also include a " + selectedInputs.Style + " style of clothing"}
+      ${(temperature["hourly"]["precipitation"].filter((x) => {
+        return x > 0.0;
+      }).length > 0) ? " Account for rain." : ""}
 
       With all the information above, generate 3 SHORT bullet points telling me what to wear
       for upper body, lower body, and shoes.
@@ -127,6 +130,9 @@ function App() {
          attire, along with a 
         ${selectedInputs.Style === undefined ? "neutral" : selectedInputs.Style}
          style, for ${temperature["hourly"]["temperature_2m"][0]} Celsius degree weather.
+        ${(temperature["hourly"]["precipitation"].filter((x) => {
+          return x > 0.0;
+        }).length > 0) ? " Account for rain." : ""}
       `
       const imageResult = await openai.createImage({
         prompt: text,
